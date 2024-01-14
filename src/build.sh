@@ -23,7 +23,7 @@ export LUA_USRPATH=${LUA_USRPATH:-/usr/local/aerospike/usr-lua}
 
 echo "This Aerospike client requires PHP7"
 
-if [[ ! -d $CLIENTREPO_3X || ! `ls $CLIENTREPO_3X/package/aerospike-client-c-devel-${AEROSPIKE_C_CLIENT}* 2> /dev/null` ]]; then
+if [[ ! -d $CLIENTREPO_3X || ! `ls $CLIENTREPO_3X/package/aerospike-client-c-libuv-devel-${AEROSPIKE_C_CLIENT}* 2> /dev/null` ]]; then
     rm -rf $CLIENTREPO_3X/package
     echo "Downloading Aerospike C Client SDK $AEROSPIKE_C_CLIENT"
 else
