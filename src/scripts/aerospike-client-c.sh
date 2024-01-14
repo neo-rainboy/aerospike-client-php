@@ -55,17 +55,17 @@ download() {
     curl -L ${url} > ${dest}
     if [ $? != 0 ]; then
       echo "error: Unable to download package from '${url}'"
-      exit 1
+      # exit 1
     fi
   elif has_cmd wget; then
     wget -O ${dest} ${url}
     if [ $? != 0 ]; then
       echo "error: Unable to download package from '${url}'"
-      exit 1
+      # exit 1
     fi
   else
     echo "error: Not able to find 'curl' or 'wget'. Either is required to download the package."
-    exit 1
+    # exit 1
   fi
 
   return 0
