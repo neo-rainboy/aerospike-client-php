@@ -126,7 +126,7 @@ if [ $DOWNLOAD ] && [ $DOWNLOAD == 1 ]; then
           PKG_TYPE="rpm"
           ;;
         "debian"* )
-          PKG_SUFFIX="${PKG_DIST}.x86_64.deb"
+          PKG_SUFFIX="${PKG_DIST}_amd64.deb"
           PKG_TYPE="deb"
           ;;
         "ubuntu12" )
