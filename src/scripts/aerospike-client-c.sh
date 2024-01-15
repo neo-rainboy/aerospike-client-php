@@ -28,7 +28,7 @@ COPY_FILES=1
 DOWNLOAD_DIR=${AEROSPIKE}/package
 AEROSPIKE_C_VERSION=${AEROSPIKE_C_VERSION:-'6.4.4'}
 unset PKG_TYPE PKG_VERSION PKG_SUFFIX PKG_ARTIFACT
-
+ 
 
 ################################################################################
 #
@@ -152,7 +152,7 @@ if [ $DOWNLOAD ] && [ $DOWNLOAD == 1 ]; then
           ;;
       esac
 
-      PKG_ARTIFACT="aerospike-client-c${PKG_BUILD}-${PKG_VERSION}.${PKG_SUFFIX}"
+      PKG_ARTIFACT="aerospike-client-c-libuv${PKG_BUILD}-${PKG_VERSION}-${PKG_SUFFIX}"
 
       LIB_PATH=${AEROSPIKE}/package/usr
       ;;
