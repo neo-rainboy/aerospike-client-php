@@ -1,5 +1,5 @@
 {
-    "name": "aerospike/aerospike-client-php",
+    "name": "neo-rainboy/aerospike-client-php",
     "description": "The Aerospike PHP client as a C-extension for PHP8",
     "keywords": ["extension","database","aerospike"],
     "homepage": "http://www.aerospike.com/docs/client/php/",
@@ -11,13 +11,13 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/aerospike/aerospike-client-php/graphs/contributors"
+            "homepage": "https://github.com/neo-rainboy/aerospike-client-php/graphs/contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/aerospike/aerospike-client-php/issues?state=open",
+        "issues": "https://github.com/neo-rainboy/aerospike-client-php/issues?state=open",
         "forum": "http://discuss.aerospike.com/category/client-libraries/php-client",
-        "source": "https://github.com/aerospike/aerospike-client-php"
+        "source": "https://github.com/neo-rainboy/aerospike-client-php"
     },
     "require": {
         "php": "^8.0"
