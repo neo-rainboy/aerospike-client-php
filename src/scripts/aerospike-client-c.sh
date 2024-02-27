@@ -26,9 +26,9 @@ LIB_PATH=${PREFIX}
 DOWNLOAD=${DOWNLOAD_C_CLIENT:-1}
 COPY_FILES=1
 DOWNLOAD_DIR=${AEROSPIKE}/package
-AEROSPIKE_C_VERSION=${AEROSPIKE_C_VERSION:-'4.5.0'}
+AEROSPIKE_C_VERSION=${AEROSPIKE_C_VERSION:-'6.4.4'}
 unset PKG_TYPE PKG_VERSION PKG_SUFFIX PKG_ARTIFACT
-
+ 
 
 ################################################################################
 #
@@ -55,17 +55,17 @@ download() {
     curl -L ${url} > ${dest}
     if [ $? != 0 ]; then
       echo "error: Unable to download package from '${url}'"
-      exit 1
+      # exit 1
     fi
   elif has_cmd wget; then
     wget -O ${dest} ${url}
     if [ $? != 0 ]; then
       echo "error: Unable to download package from '${url}'"
-      exit 1
+      # exit 1
     fi
   else
     echo "error: Not able to find 'curl' or 'wget'. Either is required to download the package."
-    exit 1
+    # exit 1
   fi
 
   return 0
@@ -126,7 +126,7 @@ if [ $DOWNLOAD ] && [ $DOWNLOAD == 1 ]; then
           PKG_TYPE="rpm"
           ;;
         "debian"* )
-          PKG_SUFFIX="${PKG_DIST}.x86_64.deb"
+          PKG_SUFFIX="${PKG_DIST}_amd64.deb"
           PKG_TYPE="deb"
           ;;
         "ubuntu12" )
@@ -152,7 +152,7 @@ if [ $DOWNLOAD ] && [ $DOWNLOAD == 1 ]; then
           ;;
       esac
 
-      PKG_ARTIFACT="aerospike-client-c${PKG_BUILD}-${PKG_VERSION}.${PKG_SUFFIX}"
+      PKG_ARTIFACT="aerospike-client-c-libuv${PKG_BUILD}-${PKG_VERSION}-${PKG_SUFFIX}"
 
       LIB_PATH=${AEROSPIKE}/package/usr
       ;;

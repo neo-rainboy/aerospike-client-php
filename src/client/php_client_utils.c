@@ -93,7 +93,7 @@ void set_policy_defaults_from_ini(as_config* config, AerospikeClient* client) {
 	int_ini_value = INI_INT("aerospike.key_gen");
 	config->policies.write.gen = (as_policy_gen)int_ini_value;
 	config->policies.operate.gen = (as_policy_gen)int_ini_value;
-	config->policies.apply.gen = (as_policy_gen)int_ini_value;
+	// config->policies.apply.gen = (as_policy_gen)int_ini_value;
 	config->policies.remove.gen = (as_policy_gen)int_ini_value;
 
 	int_ini_value = INI_INT("aerospike.serializer");

@@ -511,21 +511,21 @@ as_status set_scan_options_from_policy_hash(as_scan* scan, zval* z_policy) {
 
 	setting_val = zend_hash_index_find(z_policy_ary, OPT_SCAN_PRIORITY);
 	if (setting_val) {
-		if (Z_TYPE_P(setting_val) == IS_LONG) {
-			scan->priority = (as_scan_priority)Z_LVAL_P(setting_val);
-		} else {
-			return AEROSPIKE_ERR_PARAM;
-		}
+		// if (Z_TYPE_P(setting_val) == IS_LONG) {
+		// 	scan->priority = (as_scan_priority)Z_LVAL_P(setting_val);
+		// } else {
+		// 	return AEROSPIKE_ERR_PARAM;
+		// }
 		setting_val = NULL;
 	}
 
 	setting_val = zend_hash_index_find(z_policy_ary, OPT_SCAN_PERCENTAGE);
 	if (setting_val) {
-		if (Z_TYPE_P(setting_val) == IS_LONG) {
-			scan->percent = (uint8_t)Z_LVAL_P(setting_val);
-		} else {
-			return AEROSPIKE_ERR_PARAM;
-		}
+		// if (Z_TYPE_P(setting_val) == IS_LONG) {
+		// 	scan->percent = (uint8_t)Z_LVAL_P(setting_val);
+		// } else {
+		// 	return AEROSPIKE_ERR_PARAM;
+		// }
 		setting_val = NULL;
 	}
 
@@ -900,7 +900,7 @@ as_status set_scan_policy_from_hash(HashTable* z_policy_hash, as_policy_scan* sc
 	}
 
 	set_bool_policy_value_from_hash_index(z_policy_hash, &scan_policy->durable_delete, OPT_POLICY_DURABLE_DELETE);
-	set_bool_policy_value_from_hash_index(z_policy_hash, &scan_policy->fail_on_cluster_change, OPT_FAIL_ON_CLUSTER_CHANGE);
+	// set_bool_policy_value_from_hash_index(z_policy_hash, &scan_policy->fail_on_cluster_change, OPT_FAIL_ON_CLUSTER_CHANGE);
 	set_uint32t_policy_value_from_hash_index(z_policy_hash, &scan_policy->records_per_second, OPT_SCAN_RPS_LIMIT);
 	set_base_policy_from_hash(z_policy_hash, &scan_policy->base);
 	return AEROSPIKE_OK;
