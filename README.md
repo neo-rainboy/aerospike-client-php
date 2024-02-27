@@ -82,7 +82,7 @@ Windows is currently not supported.
 Using [Composer](https://getcomposer.org/) you can download and build the PHP
 extension:
 
-    composer require neo-rainboy/aerospike-client-php ~8.0
+    composer require neo-rainboy/aerospike-client-php v6.4.4
     find vendor/aerospike/aerospike-client-php/ -name "*.sh" -exec chmod +x {} \;
     cd vendor/aerospike/aerospike-client-php/ && sudo composer run-script post-install-cmd
 
